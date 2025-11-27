@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0qcf6kahv38w"]
+
+[ext_resource type="Script" uid="uid://dwdv1gk16yuh4" path="res://UI/menu.gd" id="1_0h2wq"]
+
+[node name="Menu" type="CanvasLayer"]
+script = ExtResource("1_0h2wq")
+
+[node name="Previous" type="Button" parent="."]
+offset_left = 434.0
+offset_top = 362.0
+offset_right = 464.0
+offset_bottom = 393.0
+size_flags_horizontal = 0
+text = "<"
+
+[node name="Next" type="Button" parent="."]
+offset_left = 595.0
+offset_top = 361.0
+offset_right = 625.0
+offset_bottom = 392.0
+size_flags_horizontal = 0
+text = ">"
+
+[node name="PreviousBodyPart" type="Button" parent="."]
+offset_left = 625.0
+offset_top = 204.0
+offset_right = 655.0
+offset_bottom = 235.0
+size_flags_horizontal = 0
+text = "<"
+
+[node name="NextBodyPart" type="Button" parent="."]
+offset_left = 671.0
+offset_top = 204.0
+offset_right = 701.0
+offset_bottom = 235.0
+text = ">"
+
+[node name="Start" type="Button" parent="."]
+offset_left = 511.0
+offset_top = 530.0
+offset_right = 557.0
+offset_bottom = 561.0
+text = "Start"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 426.0
+offset_top = 208.0
+offset_right = 488.0
+offset_bottom = 231.0
+text = "Editing: Head"
+
+[connection signal="pressed" from="Previous" to="." method="previous_type"]
+[connection signal="pressed" from="Next" to="." method="next_type"]
+[connection signal="pressed" from="PreviousBodyPart" to="." method="previous_body_part"]
+[connection signal="pressed" from="NextBodyPart" to="." method="next_body_part"]
+[connection signal="pressed" from="Start" to="." method="finish_creation"]

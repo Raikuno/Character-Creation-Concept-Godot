@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://dcrelsbtq57pl"]
+
+[ext_resource type="PackedScene" uid="uid://dhbmpeak4tr5g" path="res://Character/Player.tscn" id="1_62x0m"]
+[ext_resource type="Script" uid="uid://ban27uuat8gvx" path="res://editor.gd" id="1_agv3s"]
+[ext_resource type="PackedScene" uid="uid://c0qcf6kahv38w" path="res://UI/menu.tscn" id="2_1qsck"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_agv3s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vip5s"]
+size = Vector2(1151, 45)
+
+[node name="Editor" type="CanvasLayer"]
+script = ExtResource("1_agv3s")
+
+[node name="Player" parent="." instance=ExtResource("1_62x0m")]
+position = Vector2(533, 356)
+
+[node name="Menu" parent="." instance=ExtResource("2_1qsck")]
+
+[node name="Area2D" type="StaticBody2D" parent="."]
+position = Vector2(3, 624)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Area2D"]
+position = Vector2(573.25, -1.499999)
+scale = Vector2(1147.5, 44.999996)
+mesh = SubResource("QuadMesh_agv3s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(573.5, -2.5)
+shape = SubResource("RectangleShape2D_vip5s")

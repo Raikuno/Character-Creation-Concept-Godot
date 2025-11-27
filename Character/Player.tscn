@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://dhbmpeak4tr5g"]
+
+[ext_resource type="Script" uid="uid://b1du16rkmxyfh" path="res://Character/player.gd" id="1_5ydrh"]
+[ext_resource type="SpriteFrames" uid="uid://bs0x5v2yhamj7" path="res://Character/sprite_frames/Heads/red.tres" id="2_5ydrh"]
+[ext_resource type="SpriteFrames" uid="uid://rd1j5nig2ntd" path="res://Character/sprite_frames/leg_l/red.tres" id="3_gvj7u"]
+[ext_resource type="SpriteFrames" uid="uid://biop2qeklk6b5" path="res://Character/sprite_frames/arm_l/red.tres" id="4_7llnk"]
+[ext_resource type="SpriteFrames" uid="uid://dx6n8ytmy4wgi" path="res://Character/sprite_frames/Body/red.tres" id="5_o1y46"]
+[ext_resource type="SpriteFrames" uid="uid://r8imnv35k7yu" path="res://Character/sprite_frames/leg_r/red.tres" id="6_qolio"]
+[ext_resource type="SpriteFrames" uid="uid://bk2votq42jihl" path="res://Character/sprite_frames/arm_r/red.tres" id="7_y83ax"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gvj7u"]
+size = Vector2(8, 29)
+
+[node name="Player" type="CharacterBody2D"]
+texture_filter = 1
+scale = Vector2(3, 3)
+script = ExtResource("1_5ydrh")
+
+[node name="Head" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_5ydrh")
+animation = &"moving"
+
+[node name="Leg_L" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("3_gvj7u")
+animation = &"idle"
+
+[node name="Arm_L" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("4_7llnk")
+animation = &"idle"
+
+[node name="Body" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("5_o1y46")
+animation = &"idle"
+
+[node name="Leg_R" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("6_qolio")
+animation = &"idle"
+
+[node name="Arm_R" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("7_y83ax")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_gvj7u")
